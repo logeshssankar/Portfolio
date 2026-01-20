@@ -1,0 +1,377 @@
+:root {
+  --bg-main: #46237a;
+  --bg-secondary: #3b1b64;
+  --text-main: #fcfcfc;
+  --accent-green: #3ddc97;
+  --accent-red: #ff495c;
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --navbar-bg: rgba(70, 35, 122, 0.65);
+}
+
+body.dark-theme {
+  --bg-main: #0f0f1a;
+  --bg-secondary: #16162a;
+  --text-main: #eaeaf0;
+  --accent-green: #3ddc97;
+  --accent-red: #ff6b6b;
+  --card-bg: rgba(255, 255, 255, 0.06);
+  --navbar-bg: rgba(15, 15, 26, 0.85);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.7;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--navbar-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 12%;
+  flex-wrap: wrap;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.nav-logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #3ddc97;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fcfcfc;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.nav-link:hover {
+  color: #3ddc97;
+}
+
+.nav-link.active {
+  color: #3ddc97;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #3ddc97;
+  left: 0;
+  bottom: -6px;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 12%;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+}
+
+.hero-text span {
+  color: #3ddc97;
+}
+
+.hero-text h2 {
+  margin: 10px 0;
+  font-weight: 400;
+}
+
+.hero-text p {
+  max-width: 500px;
+  opacity: 0.9;
+}
+
+.hero-actions {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.btn.primary {
+  background: transparent;
+  border: 2px solid #3ddc97;
+  color: #3ddc97;
+}
+
+.btn.primary:hover {
+  background: #3ddc97;
+  color: #46237a;
+}
+
+.btn.secondary {
+  background: #ff495c;
+  color: #fcfcfc;
+  border: 2px solid #ff495c;
+}
+
+.btn.secondary:hover {
+  background: transparent;
+  color: #ff495c;
+  cursor: pointer;
+}
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.section {
+  padding: 80px 12%;
+}
+
+.section h3 {
+  margin-bottom: 20px;
+  font-size: 1.9rem;
+}
+
+.section-text {
+  max-width: 700px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skills-grid span {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 14px;
+  margin-top: 20px;
+  transition: transform 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn.github {
+  background: transparent;
+  border: 2px solid #3ddc97;
+  color: #3ddc97;
+}
+
+.btn.github:hover {
+  background: #3ddc97;
+  color: #46237a;
+}
+
+.btn.live {
+  background: #ff495c;
+  color: #fcfcfc;
+  border: 2px solid #ff495c;
+}
+
+.btn.live:hover {
+  background: transparent;
+  color: #ff495c;
+}
+
+.btn i {
+  margin-right: 6px;
+}
+
+.card span {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.list li {
+  margin-bottom: 10px;
+}
+
+footer {
+  padding: 60px 12%;
+  background: var(--bg-secondary);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn.resume {
+  background: transparent;
+  border: 2px solid #3ddc97;
+  color: #3ddc97;
+  position: relative;
+}
+
+.btn.resume:hover {
+  background: #3ddc97;
+  color: #46237a;
+  transform: translateY(-3px);
+  cursor: pointer;
+}
+
+.btn.resume::after {
+  content: "PDF • 1 page";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  margin-left: 12px;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #9acbd0;
+}
+
+.btn.resume:hover::after {
+  opacity: 0.9;
+}
+
+.toast {
+  position: fixed;
+  right: 30px;
+  top: 20%;
+  background: rgba(61, 220, 151, 0.95);
+  color: #46237a;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  z-index: 2000;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 420px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+  .btn.resume::after {
+    display: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .btn.resume::after {
+    white-space: wrap;
+  }
+}
+
+@media (max-width: 611px) {
+  .btn.resume::after {
+    white-space: nowrap;
+  }
+}
+
+.nav-logo,
+.nav-link.active,
+.btn.primary,
+.btn.github {
+  color: var(--accent-green);
+  border-color: var(--accent-green);
+}
+
+.btn.secondary,
+.btn.live {
+  background: var(--accent-red);
+  border-color: var(--accent-red);
+}
+
+footer a{
+  text-decoration: none;
+  color: #fcfcfc;
+}
